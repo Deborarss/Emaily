@@ -1,13 +1,12 @@
 // Importing Express library
 const express = require('express');
-// Importing Passport library
-const passport = require('passport');
-// Importing Passport Google oauth 2.0 library
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-// Importing keys
-const keys = require('./config/keys');
+// Importing passport js
+require('./services/passport');
 
 const app = express();
+
+// Importing authRoutes function and invoke it
+require('./routes/authRoutes')(app);
 
 
 // Dynamic Port Binding (Heroku tell us which port our app will use, so we need to make sure we listen to the port they tell us to)
