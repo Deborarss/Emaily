@@ -1,7 +1,14 @@
 // Importing Express library
 const express = require('express');
+// Importing mongoose
+const mongoose = require('mongoose');
+// Importing keys js
+const keys = require('./config/keys');
 // Importing passport js
 require('./services/passport');
+
+// Connecting to mongoDB using mongoose
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
