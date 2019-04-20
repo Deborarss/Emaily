@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 // Importing passport js
 require('./services/passport');
+// Importing User js
+require('./model/User');
 
 // Connecting to mongoDB using mongoose
 mongoose.connect(keys.mongoURI);
