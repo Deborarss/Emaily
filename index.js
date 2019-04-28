@@ -1,16 +1,9 @@
-// Importing Express library
 const express = require('express');
-// Importing mongoose
 const mongoose = require('mongoose');
-// Importing cookie-session
 const cookieSession = require('cookie-session');
-// Importing passport
 const passport = require('passport');
-// Importing keys js
 const keys = require('./config/keys');
-// Importing User js
 require('./model/User');
-// Importing passport js
 require('./services/passport');
 
 // Connecting to mongoDB using mongoose

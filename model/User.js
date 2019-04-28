@@ -1,8 +1,6 @@
-// Importing mongoose
 const mongoose = require('mongoose');
 // Destructuring
 const { Schema } = mongoose; // same: const Schema = mongoose.Schema
-
 // Schema
 const userSchema = new Schema({
   googleId: String

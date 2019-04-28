@@ -1,12 +1,7 @@
-// Importing Passport library
 const passport = require('passport');
-// Importing Passport Google oauth 2.0 library
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-// Importing mongoose
 const mongoose = require('mongoose');
-// Importing keys
 const keys = require('../config/keys');
-// Model class
 const User = mongoose.model('users');
 
 passport.serializeUser((user, done) => {
