@@ -7,7 +7,11 @@ require('./model/User');
 require('./services/passport');
 
 // Connecting to mongoDB using mongoose
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI,
+  {useNewUrlParser: true, useCreateIndex:true}, (err, res) => {
+    if(err) throw err;
+    console.log('Database online');   
+  });
 
 const app = express();
 
@@ -25,5 +29,7 @@ require('./routes/authRoutes')(app);
 
 // Dynamic Port Binding (Heroku tell us which port our app will use, so we need to make sure we listen to the port they tell us to)
 const PORT = process.env.PORT || 5000;
-app.listen(PORT); 
+app.listen(PORT, () => {
+  console.log('listining port 5000');  
+}); 
 
